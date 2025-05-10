@@ -1,15 +1,18 @@
-# 🗂 Excel Data Pipeline Workbook (Intermediate-Advanced Level)
+# 🗂 Excel SQL Data Pipeline (Intermediate–Advanced Level)
 
 **By Moid Ahmed**  
-*Information Systems student at SNHU | Fulfillment & Data Analysis Specialist*
+*Information Systems Student at SNHU | Fulfillment & Data Analysis Specialist*
 
 ---
 
 ## 📋 Overview
 
-This project simulates a **full data pipeline for a company** using an Excel workbook that mimics a **relational database**. The workbook contains multiple linked sheets: Customers, Orders, Products, Inventory, Departments, Staff, Shipments, Returns, Reviews, Tracking, and more. It integrates dynamic calculations, validation checks, and cross-referenced keys using **XLOOKUPs, helper columns, and structured tables** to maintain data integrity and support scalable analysis.
+This project demonstrates a **hybrid data pipeline** that begins with a multi-sheet Excel workbook designed to simulate a **relational database**. The workbook includes interconnected tables—Customers, Orders, Products, Inventory, Departments, Staff, Shipments, Returns, Reviews, Tracking, and more—each linked through cross-referenced keys and maintained with **XLOOKUPs, helper columns, structured tables, and data validation**.
+
+As Excel reaches its practical limits in querying and analyzing complex, interrelated datasets, the workflow transitions to **SQL-based analysis**. By importing the Excel tables into a relational database environment (e.g., SQLite or SQL Server), I use **JOINs, aggregations, filtering, and conditional logic** to perform more scalable and efficient analysis. This shift highlights the strengths of each tool and mirrors real-world data handling practices in business intelligence and analytics.
 
 ---
+
 
 ## 🔧 Steps Completed
 
@@ -148,10 +151,12 @@ While Excel offers powerful tools for basic data manipulation, it becomes less p
 
 This project demonstrates:
 
-- Strong **data modeling** using Excel (multi-sheet relational structure).
+- Strong **data modeling** using Excel and SQL, including a complete **Entity Relationship Diagram (ERD)**.
 - Advanced **formula skills** (XLOOKUPs, dynamic calculations, validation checks).
-- Practical understanding of **data integrity** using keys and referential logic.
+- Practical understanding of **data integrity** through primary/foreign keys and referential logic.
 - Hands-on experience with **business pipeline simulation** in Excel.
+- Integration of **SQL for scalable data analysis** and multi-table relational querying.
+- A real-world approach to **transitioning from spreadsheet models to relational databases**.
 
 ---
 
@@ -165,6 +170,8 @@ This project demonstrates:
 - Dynamic Inventory & Pricing Logic
 - Multi-sheet Integration
 - Helper Columns (for Date Analysis)
+- SQL (JOINs, GROUP BY, Aggregation, Subqueries)
+- SQLite / SQL Server for Data Import & Querying
 
 ---
 
