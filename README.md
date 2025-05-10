@@ -138,9 +138,9 @@ This project simulates a **full data pipeline for a company** using an Excel wor
 
 ## 📝 Next Steps (Ongoing Work)
 
-- Build **dashboards** for data visualization (Revenue, Inventory Trends, Staff Performance).
-- Add **pivot tables** & charts to analyze performance by Region, Product Category, etc.
-- Document formulas & logic in a detailed **README.md** file.
+- ## Data Analysis Approach
+
+While Excel offers powerful tools for basic data manipulation, it becomes less practical when working with multiple interrelated tables that need to function interchangeably. To ensure a more efficient, scalable, and maintainable workflow, this project transitions to SQL for handling data analysis. SQL enables seamless querying across relational datasets, supports complex joins and aggregations, and is better suited for larger or more dynamic data environments.
 
 ---
 
