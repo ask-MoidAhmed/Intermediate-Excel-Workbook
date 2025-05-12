@@ -139,6 +139,65 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 
 ---
 
+## 📊 SQL Queries
+
+### -- Customer Behavior & Segmentation --
+
+- **Top 10 Most Valuable Customers by Lifetime Spend**  
+  Identifies the top 10 customers based on their total lifetime spending.
+  
+- **Average Rating Based on State and Year**  
+  Computes the average rating per state for orders placed in 2024.
+  
+- **Top Purchases by Product Category**  
+  Calculates the top 5 product purchases by total sales per product.
+
+- **Top Purchases by Product Category (Grouped by Category)**  
+  Computes total sales for each product category and ranks them by revenue.
+
+- **Which Departments Receive the Most Negative/Positive Reviews?**  
+  Identifies which product categories receive the highest ratings and the most negative feedback.
+
+- **Do Customer Returns Relate to Negative Reviews?**  
+  Analyzes if there’s a correlation between customer returns and negative reviews.
+
+- **Rate of Orders Per Day and Average Days Between Orders**  
+  Calculates the average number of days between customer orders and determines the rate of orders per day.
+
+---
+
+### -- Revenue and Performance --
+
+- **Most/Least Bought Product(s)**  
+  Identifies the most and least purchased products based on order frequency.
+
+- **Most/Least Profitable Product and Most/Least Profit Margin Per Product**  
+  Determines the most and least profitable products, including their profit margins.
+
+---
+
+## ⚙️ Next Steps (Ongoing Work)
+
+Moving forward, the focus will shift toward optimizing these queries for scalability, automation, and deeper analysis:
+
+- **Implement Data Integrity Checks:**  
+  Incorporate regular data validation and auditing to ensure consistency between related tables.
+  
+- **Advanced Customer Segmentation:**  
+  Perform more granular segmentation using additional customer behavior data, and apply machine learning algorithms to predict high-value customers.
+
+- **Enhanced Reporting Dashboards:**  
+  Design and implement interactive dashboards for easy reporting and data visualization using BI tools like Power BI or Tableau.
+
+- **Performance Optimization:**  
+  Review query performance and optimize slow-running queries, utilizing indexing and proper joins.
+
+- **Automate Data Pipeline:**  
+  Set up a robust ETL (Extract, Transform, Load) pipeline to automate the process of transferring data from the source Excel sheets to the SQL database.
+
+---
+
+
 ## 📝 Next Steps (Ongoing Work)
 
 - ## Data Analysis Approach
