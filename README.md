@@ -9,14 +9,14 @@
 
 This project demonstrates a **hybrid data pipeline** that begins with a multi-sheet Excel workbook designed to simulate a **relational database**. The workbook includes interconnected tables—Customers, Orders, Products, Inventory, Departments, Staff, Shipments, Returns, Reviews, Tracking, and more—each linked through cross-referenced keys and maintained with **XLOOKUPs, helper columns, structured tables, and data validation**.
 
-As Excel reaches its practical limits in querying and analyzing complex, interrelated datasets, the workflow transitions to **SQL-based analysis**. By importing the Excel tables into a relational database environment (e.g., SQLite or SQL Server), I use **JOINs, aggregations, filtering, and conditional logic** to perform more scalable and efficient analysis. This shift highlights the strengths of each tool and mirrors real-world data handling practices in business intelligence and analytics.
+As Excel reaches its practical limits in querying and analyzing complex, interrelated datasets, the workflow transitions to **SQL-based analysis**. By importing the Excel tables into a relational database environment (e.g., MySql), I use **JOINs, aggregations, filtering, and conditional logic** to perform more scalable and efficient analysis. This shift highlights the strengths of each tool and mirrors real-world data handling practices in business intelligence and analytics.
 
 ---
 
 
 ## 🔧 Steps Completed
 
-### 1️⃣ Planning & Design
+### Planning & Design
 
 - **Created an ERD (Entity Relationship Diagram):**
   - Designed relationships between key tables (Customers, Orders, Products, etc.).
@@ -32,7 +32,7 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 
 ---
 
-### 2️⃣ Workbook Setup
+### Workbook Setup
 
 - **Created worksheets:**
   - Customers, Orders, Products, Inventory, Departments, Staff, Shipments, Returns, Reviews, Tracking, Replenishments.
@@ -45,7 +45,7 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 
 ---
 
-### 3️⃣ Inventory Logic
+### Inventory Logic
 
 - **Dynamic Inventory Calculation:**
   - Added a **helper column** for Starting Inventory.
@@ -63,7 +63,7 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 
 ---
 
-### 4️⃣ Orders & Payment
+### Orders & Payment
 
 - **Order Details:**
   - Added Orders & Order Details tables with:
@@ -94,7 +94,7 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 
 ---
 
-### 5️⃣ Address & Tracking
+### Address & Tracking
 
 - **Shipping Addresses:**
   - Linked Ship Address to Customer ID as an FK.
@@ -109,7 +109,7 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 
 ---
 
-### 6️⃣ Reviews & Replenishment
+### Reviews & Replenishment
 
 - **Added Reviews Table:**
   - Linked reviews to Customers & Products for feedback tracking.
@@ -127,42 +127,44 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 
 ---
 
-### 7️⃣ Helper Columns & Analysis Prep
-
-- Added **helper columns**:
-  - Extracted *Year* & *Month* from key dates to enable time-based analysis.
-
-- **Initial testing:**
-  - Ran through data pipelines to confirm relationships & calculations hold under changes.
-
-![image](https://github.com/user-attachments/assets/7711752c-3648-427f-bbe8-fffc72e503da)
-
----
-
 ## 📊 SQL Queries
 
 ### -- Customer Behavior & Segmentation --
 
 - **Top 10 Most Valuable Customers by Lifetime Spend**  
-  Identifies the top 10 customers based on their total lifetime spending.
-  
+ - Identifies the top 10 customers based on their total lifetime spending.
+
+![image](https://github.com/user-attachments/assets/23587f3d-a052-43b5-823c-0efb6608ab1f)
+
 - **Average Rating Based on State and Year**  
-  Computes the average rating per state for orders placed in 2024.
-  
+ - Computes the average rating per state for orders placed in 2024.
+
+![image](https://github.com/user-attachments/assets/441c7521-e8c2-466d-9f9f-d390ebae79a9)
+
 - **Top Purchases by Product Category**  
-  Calculates the top 5 product purchases by total sales per product.
+ - Calculates the top 5 product purchases by total sales per product.
+
+![image](https://github.com/user-attachments/assets/e860aedd-25db-4440-a2f7-287dccce8479)
 
 - **Top Purchases by Product Category (Grouped by Category)**  
-  Computes total sales for each product category and ranks them by revenue.
+ - Computes total sales for each product category and ranks them by revenue.
 
-- **Which Departments Receive the Most Negative/Positive Reviews?**  
-  Identifies which product categories receive the highest ratings and the most negative feedback.
+![image](https://github.com/user-attachments/assets/1bbdceb1-02bd-49ca-a814-0b46508b6af3)
+
+- **Which Category of Products Receive the Most Negative/Positive Reviews?**  
+ - Identifies which product categories receive the highest ratings and the most negative feedback.
+
+![image](https://github.com/user-attachments/assets/d59a1474-cfd5-4ee3-938d-237b88aac0c0)
 
 - **Do Customer Returns Relate to Negative Reviews?**  
-  Analyzes if there’s a correlation between customer returns and negative reviews.
+ - Analyzes if there’s a correlation between customer returns and negative reviews.
+
+![image](https://github.com/user-attachments/assets/aa5d6221-54d0-417c-a0db-29bf8f541ac4)
 
 - **Rate of Orders Per Day and Average Days Between Orders**  
-  Calculates the average number of days between customer orders and determines the rate of orders per day.
+ - Calculates the average number of days between customer orders and determines the rate of orders per day.
+
+![image](https://github.com/user-attachments/assets/6523e665-0565-48bc-9a93-5b426b76a1c8)
 
 ---
 
@@ -171,47 +173,28 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 - **Most/Least Bought Product(s)**  
   Identifies the most and least purchased products based on order frequency.
 
+![image](https://github.com/user-attachments/assets/ed5fec7b-2f2c-41c4-b191-750a6bbdf930)
+
 - **Most/Least Profitable Product and Most/Least Profit Margin Per Product**  
   Determines the most and least profitable products, including their profit margins.
+
+![image](https://github.com/user-attachments/assets/b2fbeedd-2c2b-4619-a89d-8f78dcc2e6b0)
 
 ---
 
 ## ⚙️ Next Steps (Ongoing Work)
 
-Moving forward, the focus will shift toward optimizing these queries for scalability, automation, and deeper analysis:
-
-- **Implement Data Integrity Checks:**  
-  Incorporate regular data validation and auditing to ensure consistency between related tables.
-  
-- **Advanced Customer Segmentation:**  
-  Perform more granular segmentation using additional customer behavior data, and apply machine learning algorithms to predict high-value customers.
-
-- **Enhanced Reporting Dashboards:**  
-  Design and implement interactive dashboards for easy reporting and data visualization using BI tools like Power BI or Tableau.
-
-- **Performance Optimization:**  
-  Review query performance and optimize slow-running queries, utilizing indexing and proper joins.
-
-- **Automate Data Pipeline:**  
-  Set up a robust ETL (Extract, Transform, Load) pipeline to automate the process of transferring data from the source Excel sheets to the SQL database.
-
----
+Moving forward, the focus will shift toward generating more queries for deeper analysis:
 
 
-## 📝 Next Steps (Ongoing Work)
 
-- ## Data Analysis Approach
-
-While Excel offers powerful tools for basic data manipulation, it becomes less practical when working with multiple interrelated tables that need to function interchangeably. To ensure a more efficient, scalable, and maintainable workflow, this project transitions to SQL for handling data analysis. SQL enables seamless querying across relational datasets, supports complex joins and aggregations, and is better suited for larger or more dynamic data environments.
-
----
 
 ## 🚀 Why This Matters
 
 This project demonstrates:
 
 - Strong **data modeling** using Excel and SQL, including a complete **Entity Relationship Diagram (ERD)**.
-- Advanced **formula skills** (XLOOKUPs, dynamic calculations, validation checks).
+- Advanced **formula skills** (dynamic calculations, validation checks).
 - Practical understanding of **data integrity** through primary/foreign keys and referential logic.
 - Hands-on experience with **business pipeline simulation** in Excel.
 - Integration of **SQL for scalable data analysis** and multi-table relational querying.
@@ -224,13 +207,13 @@ This project demonstrates:
 - Entity Relationship Diagram (ERD) Design
 - DBML & dbdiagram.io
 - Excel Tables & Structured References
-- XLOOKUP & Named Ranges
+- Named Ranges
 - Data Validation & Error Checking
 - Dynamic Inventory & Pricing Logic
 - Multi-sheet Integration
 - Helper Columns (for Date Analysis)
-- SQL (JOINs, GROUP BY, Aggregation, Subqueries)
-- SQLite / SQL Server for Data Import & Querying
+- SQL (JOINs, GROUP BY, Aggregation, Subqueries, CTEs)
+- MySQL Server for Data Import & Querying
 
 ---
 
