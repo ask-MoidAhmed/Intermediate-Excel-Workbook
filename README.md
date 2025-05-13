@@ -180,14 +180,97 @@ As Excel reaches its practical limits in querying and analyzing complex, interre
 
 ![image](https://github.com/user-attachments/assets/b2fbeedd-2c2b-4619-a89d-8f78dcc2e6b0)
 
+* **Total Revenue in 2024**
+* Computes the overall revenue generated in the year 2024.
+
+![image](https://github.com/user-attachments/assets/2ea2e8d0-175a-41c3-96ec-797991ce72af)
+
+* **Total Revenue in 2024 (Arkansas Only)**
+* Calculates the total revenue from Arkansas in the year 2024.
+
+![image](https://github.com/user-attachments/assets/dc8230c1-0270-4e8f-b270-364c7ff174fd)
+
+* **Total Profitability in 2024**
+* Computes the net profit for 2024 after deducting taxes, shipping fees, and product costs.
+
+![image](https://github.com/user-attachments/assets/bc80527e-fb90-47c0-8b53-87a1d73844d3)
+
+* **Top 5 Most and Least Profitable States**
+* Lists the 5 states with the highest and lowest revenue based on total order values.
+
+![image](https://github.com/user-attachments/assets/6fcb0137-242f-484c-86c9-091c57a609dd)
+
+* **Highest Revenue Month in 2023**
+* Identifies the month in 2023 with the most revenue.
+
+![image](https://github.com/user-attachments/assets/405fc7f0-bdb6-4ba1-90b4-5f7f239ba652)
+
+* **Return on Investment (ROI) in 2024**
+* Calculates ROI in 2024 based on profit, product cost, and total staff salary.
+
+![image](https://github.com/user-attachments/assets/504e3043-e10a-4297-858a-37873f98930f)
+
+* **Cost of Goods Sold (COGS) in 2024**
+* Total cost of goods sold based on inventory usage in 2024.
+
+![image](https://github.com/user-attachments/assets/08d446b2-d008-4c43-893d-09a759ca07e8)
+
+* **Shipping & Tax Fees Collected in 2023**
+* Displays total shipping and tax fees received in 2023.
+
+![image](https://github.com/user-attachments/assets/28f54d17-6891-496c-a2c6-d29f7369a819)
+
+* **Profit Difference: 2023 vs. 2024**
+* Compares revenue differences between 2023 and 2024 to determine if profit increased or decreased.
+
+![image](https://github.com/user-attachments/assets/95c8750b-01e3-4e76-8c75-ac3f0b5fcdca)
+
 ---
 
-## ⚙️ Next Steps (Ongoing Work)
+### -- Inventory Performance --
 
-Moving forward, the focus will shift toward generating more queries for deeper analysis:
+* **Product with Highest/Lowest Inventory Price**
+* Displays product with the highest or lowest total inventory price.
+
+![image](https://github.com/user-attachments/assets/5f41b5db-ab4a-43f2-84a7-192bb88e286a)
+
+* **Product with the Highest Total Cost**
+* Shows which product holds the highest cost in inventory.
+
+![image](https://github.com/user-attachments/assets/da78caad-ff92-40a4-9581-95e7b95dccdf)
+
+* **Dead Inventory / Least Sold Product**
+* Identifies inventory items with the lowest sales or no movement.
+
+![image](https://github.com/user-attachments/assets/93d11d48-2c04-4c6e-bb47-5ae1f56c1913)
+
+---
+
+### -- Staff & Department Analysis --
+
+* **Most Expensive Department**
+* Ranks departments based on total staff salary cost.
+
+![image](https://github.com/user-attachments/assets/c5eb72a9-1fd5-477e-abb3-cbf107327b93)
+
+* **Staff Demographics by Generation**
+* Categorizes staff based on generational age groups.
+
+![image](https://github.com/user-attachments/assets/4539eb09-92d4-457e-9582-fc0f32e81727)
+
+* **Highest Paid Staff Member**
+* Identifies the staff member with the highest salary.
+
+![image](https://github.com/user-attachments/assets/2bb77ac9-449c-41bf-8c7e-f28462110890)
 
 
+---
 
+## 📈 Final Thoughts
+
+With this, I conclude the repository. It demonstrates practical skills in data modeling, analysis, and reporting—blending SQL and Excel for real-world insights.
+
+---
 
 ## 🚀 Why This Matters
 
