@@ -105,3 +105,163 @@ group by i.ProductNm
 order by Profit desc # <---- Change this to "ProfitMargin" or "Profit"
 limit 1
 ;
+
+# total revenue per year
+select round(sum(Total),2) TotalRevenue
+from orders
+where year(OrderDate) = 2024
+;
+
+#total revenue per year per state
+select round(sum(o.Total),2) as TotalRevenue
+from orders o
+inner join shipaddress sa
+	on o.CusId=sa.CusId
+where year(o.OrderDate) = 2024
+and sa.State = 'Arkansas'
+;
+
+# total profitability
+select round(sum(o.Total-o.TaxFee-o.Shipfee)-sum(i.Cost),2) as TotalProfit, year(o.OrderDate) as Year
+from orders o
+inner join orderdetails od
+	on o.OrderId=od.OrderId
+    inner join inventory i
+		on od.ProductId=i.ProductId
+where year(o.OrderDate)= 2024
+group by year(o.OrderDate)
+;
+
+# which 5 states generated the most/least profit total
+select round(sum(o.Total),2) as TotalRevenue, sa.State
+from orders o
+inner join shipaddress sa
+	on o.CusId=sa.CusId
+group by sa.State
+order by TotalRevenue desc #<---- remove the desc to make it the least revenue generating states
+limit 5
+;
+
+# which month generated the most revenue for a specific year
+select monthname(OrderDate) as MonthSel, round(sum(o.Total),2) as TotalRevenue
+from orders o
+where year(o.OrderDate)=2023 #<---- change the year
+group by MonthSel
+order by TotalRevenue desc
+limit 1 #<---- change the limit to get more states
+;
+
+# lets also calculate roi
+		# we need to minus costs from profit
+select
+round(((
+(sum(o.Total-o.TaxFee-o.Shipfee)
+-
+sum(i.Cost))
+/
+((select sum(s.Salary)
+from staff s) + sum(i.Cost))
+)*100),2) as ROI,
+year(o.OrderDate) as Year
+from orders o
+inner join orderdetails od
+	on o.OrderId=od.OrderId
+    inner join inventory i
+		on od.ProductId=i.ProductId
+where year(o.OrderDate)= 2024
+group by year(o.OrderDate)
+;
+
+# lets calculte COGS by year
+select
+round(sum(i.Cost),2) as COGS,
+year(o.OrderDate) as YearLook
+from orders as o
+inner join orderdetails as od
+	on o.OrderId=od.OrderId
+    inner join inventory as i
+		on od.ProductId=i.ProductId
+where year(o.OrderDate) = 2024
+group by year(o.OrderDate)
+;
+
+# total shipping fees/tax revenue collected in a given year
+select round(sum(ShipFee),2) as ShipFee, round(sum(TaxFee),2) as TaxFee, year(OrderDate) as YearGiven
+from orders
+where year(OrderDate)=2023
+group by year(OrderDate)
+;
+
+# did we generate more profit or less profit in 2024 than in 2023
+with RevenueData as (
+select
+round(sum(case when year(o.OrderDate) = 2024 then o.Total else 0 end)-
+sum(case when year(o.OrderDate) = 2023 then o.Total else 0 end),2) as RevDiff
+from orders o)
+select RevDiff,
+if(RevDiff < 0,'Loss','Gain') as ProfitOrLoss
+from RevenueData
+;
+
+-- Inventory Performance --
+
+# which product has the highest/lowest inventory price
+select ProductNm, TotInvPrice
+from inventory
+order by TotInvPrice desc # remove the desc to make is ascending
+limit 1
+;
+
+# which product has the highest cost
+select ProductNm, round(Cost*Inv,2) as TotalCost
+from inventory
+order by TotalCost desc 
+limit 1
+;
+
+# dead inventory or least sold product
+with Temp as(
+select ProductId, sum(Quantity) as Total
+from orderdetails
+group by ProductId
+order by Total)
+select *
+from inventory i
+right join Temp t
+	on t.ProductId=i.ProductId
+order by t.Total
+limit 1
+;
+
+-- Staff & Department Analysis --
+
+# which department costs the most
+select sum(s.Salary) TotalCost, d.DepName
+from staff as s
+inner join department as d
+	on s.DeptId=d.DeptId
+group by s.DeptId, d.DepName
+order by TotalCost desc
+limit 1
+;
+
+# what is the staff demographics
+select FirstName, LastName, Age
+,case
+	when Age>65 then 'Baby Boomer'
+    when Age>40 then 'Gen X'
+    when Age>30 then 'Millennials'
+    when Age>20 then 'Gen Z'
+    else 'Gen Alpha'
+end as Generation
+from staff
+order by Age             # BTW you can also do promotions based on salary using this, the when would be salary, and then would be their promotion salary
+;
+
+# who makes the most
+select *
+from staff
+order by Salary desc
+limit 1
+;
+
